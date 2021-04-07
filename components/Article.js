@@ -92,16 +92,16 @@ const data = [
     date: 'Nov 5th, 2048',
     firstParagraph: `Hello everyone.`,
 
-    secondParagraph: `I am BK.`,
+    secondParagraph: `I am from BK`,
 
-    thirdParagraph: `I am NYC.`
+    thirdParagraph: `I am from NYC`
   },
   {
     title: 'You',
     date: 'May 7th, 2069',
     firstParagraph: `Hey`,
 
-    secondParagraph: `Buddies.`,
+    secondParagraph: `Buddies`,
 
     thirdParagraph: `Howdy`
 }
