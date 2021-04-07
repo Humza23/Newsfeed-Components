@@ -86,8 +86,26 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
-];
+  },
+  {
+    title: 'Lol',
+    date: 'Nov 5th, 2048',
+    firstParagraph: `Hello everyone.`,
+
+    secondParagraph: `I am BK.`,
+
+    thirdParagraph: `I am NYC.`
+  },
+  {
+    title: 'You',
+    date: 'May 7th, 2069',
+    firstParagraph: `Hey`,
+
+    secondParagraph: `Buddies.`,
+
+    thirdParagraph: `Howdy`
+}
+]
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
@@ -114,3 +132,42 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(articleObj) {
+
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const firstParagraph = document.createElement('p');
+  const secondParagraph = document.createElement('p');
+  const thirdParagraph = document.createElement('p');
+  const expand = document.createElement('span');
+
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(firstParagraph);
+  article.appendChild(secondParagraph);
+  article.appendChild(thirdParagraph);
+  article.appendChild(expand);
+
+  article.classList.add("article");
+  date.classList.add("date");
+  expand.classList.add("expandButton");
+
+  title.textContent = articleObj.title;
+  date.textContent = articleObj.date;
+  firstParagraph.textContent = articleObj.firstParagraph;
+  secondParagraph.textContent = articleObj.secondParagraph;
+  thirdParagraph.textContent = articleObj.thirdParagraph;
+  expand.textContent = '+';
+
+  expand.addEventListener('click', function(event){
+    article.classList.toggle('article-open')
+  })
+  return article;
+}
+
+data.forEach(function (articleObj){
+  const article = articleMaker(articleObj);
+  return document.body.appendChild(article);
+});
