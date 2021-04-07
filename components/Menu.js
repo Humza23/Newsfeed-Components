@@ -52,4 +52,6 @@ function menuMaker(menuArr){
   return menu;
 }
 
-document.querySelector('.header').appendChild(menuMaker(menuItems))
+const headerAdd = document.querySelector('.header')
+
+headerAdd.appendChild(menuMaker(menuItems))
